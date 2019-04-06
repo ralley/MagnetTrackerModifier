@@ -20,7 +20,9 @@ namespace MagnetTrackerModifier
         public MegnetForm()
         {
             InitializeComponent();
+#pragma warning disable CS4014 // 由于此调用不会等待，因此在调用完成前将继续执行当前方法
             TryDownloadTrackersAsync();
+#pragma warning restore CS4014 // 由于此调用不会等待，因此在调用完成前将继续执行当前方法
             InitFromClipboard();
         }
 
@@ -92,6 +94,10 @@ namespace MagnetTrackerModifier
 
         bool ValidateMagnetString(string str)
         {
+            if (str == null)
+            {
+                return false;
+            }
             Regex r = new Regex(@"^magnet:\?xt=urn:btih:", RegexOptions.IgnoreCase);
             Match matchResult = r.Match(str);
             return matchResult.Success;

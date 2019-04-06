@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MegnetForm));
             this.btnModify = new System.Windows.Forms.Button();
             this.textInput = new System.Windows.Forms.TextBox();
             this.textOutput = new System.Windows.Forms.TextBox();
@@ -92,7 +93,7 @@
             this.labelState.TabIndex = 5;
             this.labelState.Text = "label2";
             // 
-            // Form1
+            // MegnetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,7 +104,8 @@
             this.Controls.Add(this.textOutput);
             this.Controls.Add(this.textInput);
             this.Controls.Add(this.btnModify);
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "MegnetForm";
             this.Text = "Magnet Tracker Modifer";
             this.ResumeLayout(false);
             this.PerformLayout();
